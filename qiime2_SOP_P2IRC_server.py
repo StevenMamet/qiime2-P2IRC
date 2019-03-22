@@ -1,11 +1,8 @@
 ##############################################################################################################################
-##############################################################################################################################
 
-# Running the classification on barley (but there's also peas, beans, and wheat...oh my)
+# Running the classification on the barley server here at the UofS (but there's also peas, beans, and wheat...oh my)
 
-# To get access to these servers, you'll need to contact Greg Oster <oster@cs.usask.ca>
-
-# Log on to oats (use your UofS nsid and pw)
+# Log on to oats (use your UofS nsid and pw once you've arranged access)
 # ssh sdm231@oats.usask.ca
 # or
 # ssh sdm231@peas.usask.ca
@@ -393,72 +390,3 @@ biom add-metadata --input-fp deblur_output_exported/feature-table.biom \
 scp -r sdm231@barley:/home/sdm231/canola/* ~/Desktop/folder
 
 # Much rejoicing. If you've made it this far, you're done with the hell known as bioinformatics.
-
-##############################################################################################################################################################################
-##############################################################################################################################################################################
-##############################################################################################################################################################################
-##############################################################################################################################################################################
-##############################################################################################################################################################################
-##############################################################################################################################################################################
-
-## Other tidbits
-
-# To count the number of files in the directory
-ls | wc -l
-
-# To count the number of sequences in a fastq.gz file
-gunzip -c CHCK2CS1208NC02001S_R1.fastq.gz | wc -l
-
-##############################################################################################################################
-
-# Generate a tree for phylogenetic diversity analyses
-
-# QIIME supports several phylogenetic diversity metrics, including Faith’s Phylogenetic Diversity and weighted and
-# unweighted UniFrac. In addition to counts of features per sample (i.e., the data in the FeatureTable[Frequency]
-# QIIME 2 artifact), these metrics require a rooted phylogenetic tree relating the features to one another.
-# This information will be stored in a Phylogeny[Rooted] QIIME 2 artifact. To generate a phylogenetic tree we will
-# use align-to-tree-mafft-fasttree pipeline from the q2-phylogeny plugin.
-
-# First, the pipeline uses the mafft program to perform a multiple sequence alignment of the sequences in our FeatureData[Sequence]
-# to create a FeatureData[AlignedSequence] QIIME 2 artifact. Next, the pipeline masks (or filters) the alignment to remove positions
-# that are highly variable. These positions are generally considered to add noise to a resulting phylogenetic tree. Following that,
-# the pipeline applies FastTree to generate a phylogenetic tree from the masked alignment. The FastTree program creates an unrooted tree,
-# so in the final step in this section midpoint rooting is applied to place the root of the tree at the midpoint of the longest tip-to-tip
-# distance in the unrooted tree.
-qiime phylogeny align-to-tree-mafft-fasttree \
-  --i-sequences reads_qza/rep-seqs.qza \
-  --o-alignment reads_qza/aligned-rep-seqs.qza \
-  --o-masked-alignment reads_qza/masked-aligned-rep-seqs.qza \
-  --o-tree unrooted-tree.qza \
-  --o-rooted-tree rooted-tree.qza
-
-# Alpha and beta diversity analysis in the qiime tutorial were skipped - too reliant on rarefaction
-
-##############################################################################################################################
-
-# Merging qza files from two separate runs - IF NECESSARY
-# This has to happen after deblur
-
-# Here I'm filtering the original feature table to make room for the re-processed features (i.e., so there are no duplicates)
-qiime feature-table filter-samples \
-  --i-table orig_seqs/table.qza \
-  --m-metadata-file Samples-to-keep.csv \
-  --o-filtered-table merge/id-filtered-table.qza
-
-# Also need to filter the sequences that map to the original feature table
-qiime feature-table filter-seqs \
-  --i-data orig_seqs/representative_sequences.qza \
-  --i-table merge/id-filtered-table.qza \
-  --o-filtered-data merge/orig-rep-seqs-filt.qza
-
-# Now merge with the March 2019 re-runs
-qiime feature-table merge-seqs \
-  --i-data merge/orig-rep-seqs-filt.qza \
-  --i-data reads_qza/rep-seqs.qza \
-  --o-merged-data rep-seqs_merged.qza
-
-# Now merge with the March 2019 re-runs
-qiime feature-table merge \
-  --i-tables merge/orig-rep-seqs-filt.qza \
-  --i-tables table.qza \
-  --o-merged-table table_merged.qza
