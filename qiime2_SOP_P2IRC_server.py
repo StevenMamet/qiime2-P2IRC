@@ -381,7 +381,7 @@ qiime tools export --input-path taxonomy.qza --output-path deblur_output_exporte
 # Add metadata
 biom add-metadata --input-fp deblur_output_exported/feature-table.biom \
 				  --sample-metadata-fp metadata.txt \
-				  --output-fp deblur_output_exported/lulu_bacteria.biom \
+				  --output-fp deblur_output_exported/qiime2-canola.biom \
 				  --observation-metadata-fp deblur_output_exported/taxonomy.tsv \
 				  --sc-separated taxonomy_2
 
