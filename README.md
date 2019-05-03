@@ -431,11 +431,13 @@ qiime taxa barplot \
 
 Export the final abundance and taxonomy files in `BIOM format` for import into R.
 
-``
+`
 qiime tools export --input-path table.qza --output-path deblur_output_exported
+`
 
+`
 qiime tools export --input-path taxonomy.qza --output-path deblur_output_exported
-``
+`
 
 If you want to add taxonomy to the biom files, you can do this or just use the exported version above for downstream analyses:
 
