@@ -128,7 +128,7 @@ The
 refers to how many processors the command will tap into. The max will depend on your machine. My computer only has 4, so let's use that here. The command assumes the data are in a folder in your active directory called "raw_data".
 
 `
-conda install cutadapt
+conda install -c bioconda cutadapt
 `
 
 Use 
