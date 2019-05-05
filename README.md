@@ -42,10 +42,13 @@ rm qiime2-2019.1-py36-linux-conda.yml
 `
 
 ##### MacOSX
-``
+`
 wget https://data.qiime2.org/distro/core/qiime2-2019.1-py36-osx-conda.yml
+`
+
+`
 conda env create -n qiime2-2019.1 --file qiime2-2019.1-py36-osx-conda.yml
-``
+`
 
 If you receive errors during the installation process, such as gfortran errors, please ensure you are following the installation instructions that are compatible with your platform.
 
