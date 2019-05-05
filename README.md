@@ -119,8 +119,6 @@ Parallel is required to run cutadapt as it's coded below. If you don't have para
 `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null`
 `brew install parallel`
 
-Note: if you mess up and want to stop a process from running, press ctrl and c to kill it.
-
 First make this directory in canola. This is where you'll transfer the manifest.csv file to (more on that shortly).
 
 `
