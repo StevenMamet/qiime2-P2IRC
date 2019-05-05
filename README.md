@@ -310,7 +310,7 @@ Check how many reads made it through each step using another Langille [script](h
     `
 6. Run it. Note that the `--proc n` refers to the number of processors to commit to this. I'll use 4 again.
     `
-    ./qiime2_fastq_lengths.py reads_qza/*.qza --proc 60 -o read_counts/read_counts.tsv
+    ./qiime2_fastq_lengths.py reads_qza/*.qza --proc 4 -o read_counts/read_counts.tsv
     `
 
 Now you can inspect this file for how many reads made it through each step.
