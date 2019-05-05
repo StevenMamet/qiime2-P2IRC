@@ -1,0 +1,130 @@
+INFO(4421342656)2019-05-05 12:57:44,493:*************************
+INFO(4421342656)2019-05-05 12:57:44,494:deblurring started
+WARNING(4421342656)2019-05-05 12:57:44,494:deblur version 1.1.0 workflow started on /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/qiime2-archive-9smqza7s/cfb1d1ac-93b1-40f7-809a-c01829f1b2c4/data
+WARNING(4421342656)2019-05-05 12:57:44,494:parameters: {'logger': <Logger __main__ (INFO)>, 'is_worker_thread': None, 'jobs_to_start': 1, 'log_file': '/Users/sdmamet/Dropbox/CFREF Work/SteveM/2019_bootcamp/canola/deblur.log', 'log_level': 2, 'keep_tmp_files': True, 'threads_per_sample': 1, 'min_size': 2, 'min_reads': 10, 'left_trim_length': 0, 'trim_length': 200, 'indel_max': 3, 'indel_prob': 0.01, 'error_dist': [1, 0.06, 0.02, 0.02, 0.01, 0.005, 0.005, 0.005, 0.001, 0.001, 0.001, 0.0005], 'mean_error': 0.005, 'overwrite': True, 'neg_ref_db_fp': (), 'neg_ref_fp': (), 'pos_ref_db_fp': (), 'pos_ref_fp': (), 'output_dir': '/private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f', 'seqs_fp': '/private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/qiime2-archive-9smqza7s/cfb1d1ac-93b1-40f7-809a-c01829f1b2c4/data'}
+INFO(4421342656)2019-05-05 12:57:44,494:error_dist is : [1, 0.06, 0.02, 0.02, 0.01, 0.005, 0.005, 0.005, 0.001, 0.001, 0.001, 0.0005]
+INFO(4421342656)2019-05-05 12:57:44,494:deblur main program started
+INFO(4421342656)2019-05-05 12:57:44,494:processing directory /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/qiime2-archive-9smqza7s/cfb1d1ac-93b1-40f7-809a-c01829f1b2c4/data
+INFO(4421342656)2019-05-05 12:57:44,496:building negative db sortmerna index files
+INFO(4421342656)2019-05-05 12:57:44,496:build_index_sortmerna files ['/Users/sdmamet/miniconda3/envs/qiime2-2019.1/lib/python3.6/site-packages/deblur/support_files/artifacts.fa'] to dir /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir
+INFO(4421342656)2019-05-05 12:57:44,582:building positive db sortmerna index files
+INFO(4421342656)2019-05-05 12:57:44,583:build_index_sortmerna files ['/Users/sdmamet/miniconda3/envs/qiime2-2019.1/lib/python3.6/site-packages/deblur/support_files/88_otus.fasta'] to dir /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir
+INFO(4421342656)2019-05-05 12:58:30,435:processing per sample fasta files
+INFO(4421342656)2019-05-05 12:58:30,435:--------------------------------------------------------
+INFO(4421342656)2019-05-05 12:58:30,435:launch_workflow for file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/qiime2-archive-9smqza7s/cfb1d1ac-93b1-40f7-809a-c01829f1b2c4/data/ORIG1CR1101NW01000c_0_L001_R1_001.fastq.gz
+INFO(4421342656)2019-05-05 12:58:38,130:dereplicate seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW01000c_0_L001_R1_001.fastq.gz.trim
+INFO(4421342656)2019-05-05 12:58:38,188:remove_artifacts_seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW01000c_0_L001_R1_001.fastq.gz.trim.derep
+INFO(4421342656)2019-05-05 12:58:38,852:total sequences 895, passing sequences 895, failing sequences 0
+INFO(4421342656)2019-05-05 12:58:38,852:multiple_sequence_alignment seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW01000c_0_L001_R1_001.fastq.gz.trim.derep.no_artifacts
+INFO(4421342656)2019-05-05 12:58:41,098:deblurring 895 sequences
+INFO(4421342656)2019-05-05 12:58:41,247:78 unique sequences left following deblurring
+INFO(4421342656)2019-05-05 12:58:41,249:remove_chimeras_denovo_from_seqs seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW01000c_0_L001_R1_001.fastq.gz.trim.derep.no_artifacts.msa.deblurto working dir /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir
+INFO(4421342656)2019-05-05 12:58:41,295:finished processing file
+INFO(4421342656)2019-05-05 12:58:41,296:--------------------------------------------------------
+INFO(4421342656)2019-05-05 12:58:41,296:launch_workflow for file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/qiime2-archive-9smqza7s/cfb1d1ac-93b1-40f7-809a-c01829f1b2c4/data/ORIG1CR1101NW03000b_2_L001_R1_001.fastq.gz
+INFO(4421342656)2019-05-05 12:58:50,810:dereplicate seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW03000b_2_L001_R1_001.fastq.gz.trim
+INFO(4421342656)2019-05-05 12:58:50,862:remove_artifacts_seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW03000b_2_L001_R1_001.fastq.gz.trim.derep
+INFO(4421342656)2019-05-05 12:58:51,536:total sequences 1244, passing sequences 1244, failing sequences 0
+INFO(4421342656)2019-05-05 12:58:51,536:multiple_sequence_alignment seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW03000b_2_L001_R1_001.fastq.gz.trim.derep.no_artifacts
+INFO(4421342656)2019-05-05 12:58:55,071:deblurring 1244 sequences
+INFO(4421342656)2019-05-05 12:58:55,418:175 unique sequences left following deblurring
+INFO(4421342656)2019-05-05 12:58:55,420:remove_chimeras_denovo_from_seqs seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW03000b_2_L001_R1_001.fastq.gz.trim.derep.no_artifacts.msa.deblurto working dir /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir
+INFO(4421342656)2019-05-05 12:58:55,508:finished processing file
+INFO(4421342656)2019-05-05 12:58:55,509:--------------------------------------------------------
+INFO(4421342656)2019-05-05 12:58:55,509:launch_workflow for file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/qiime2-archive-9smqza7s/cfb1d1ac-93b1-40f7-809a-c01829f1b2c4/data/ORIG1CR1101NW08000b_7_L001_R1_001.fastq.gz
+INFO(4421342656)2019-05-05 12:59:03,763:dereplicate seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW08000b_7_L001_R1_001.fastq.gz.trim
+INFO(4421342656)2019-05-05 12:59:03,809:remove_artifacts_seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW08000b_7_L001_R1_001.fastq.gz.trim.derep
+INFO(4421342656)2019-05-05 12:59:04,458:total sequences 1148, passing sequences 1148, failing sequences 0
+INFO(4421342656)2019-05-05 12:59:04,458:multiple_sequence_alignment seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW08000b_7_L001_R1_001.fastq.gz.trim.derep.no_artifacts
+INFO(4421342656)2019-05-05 12:59:07,595:deblurring 1148 sequences
+INFO(4421342656)2019-05-05 12:59:07,957:202 unique sequences left following deblurring
+INFO(4421342656)2019-05-05 12:59:07,960:remove_chimeras_denovo_from_seqs seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW08000b_7_L001_R1_001.fastq.gz.trim.derep.no_artifacts.msa.deblurto working dir /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir
+INFO(4421342656)2019-05-05 12:59:08,059:finished processing file
+INFO(4421342656)2019-05-05 12:59:08,060:--------------------------------------------------------
+INFO(4421342656)2019-05-05 12:59:08,060:launch_workflow for file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/qiime2-archive-9smqza7s/cfb1d1ac-93b1-40f7-809a-c01829f1b2c4/data/ORIG1CR1101NW09000b_8_L001_R1_001.fastq.gz
+INFO(4421342656)2019-05-05 12:59:10,647:dereplicate seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW09000b_8_L001_R1_001.fastq.gz.trim
+INFO(4421342656)2019-05-05 12:59:10,672:remove_artifacts_seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW09000b_8_L001_R1_001.fastq.gz.trim.derep
+INFO(4421342656)2019-05-05 12:59:11,266:total sequences 302, passing sequences 302, failing sequences 0
+INFO(4421342656)2019-05-05 12:59:11,266:multiple_sequence_alignment seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW09000b_8_L001_R1_001.fastq.gz.trim.derep.no_artifacts
+INFO(4421342656)2019-05-05 12:59:14,899:deblurring 302 sequences
+INFO(4421342656)2019-05-05 12:59:14,926:50 unique sequences left following deblurring
+INFO(4421342656)2019-05-05 12:59:14,926:remove_chimeras_denovo_from_seqs seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW09000b_8_L001_R1_001.fastq.gz.trim.derep.no_artifacts.msa.deblurto working dir /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir
+INFO(4421342656)2019-05-05 12:59:14,953:finished processing file
+INFO(4421342656)2019-05-05 12:59:14,954:--------------------------------------------------------
+INFO(4421342656)2019-05-05 12:59:14,954:launch_workflow for file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/qiime2-archive-9smqza7s/cfb1d1ac-93b1-40f7-809a-c01829f1b2c4/data/ORIG1CR1101NW06000a_5_L001_R1_001.fastq.gz
+INFO(4421342656)2019-05-05 12:59:21,465:dereplicate seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW06000a_5_L001_R1_001.fastq.gz.trim
+INFO(4421342656)2019-05-05 12:59:21,507:remove_artifacts_seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW06000a_5_L001_R1_001.fastq.gz.trim.derep
+INFO(4421342656)2019-05-05 12:59:22,149:total sequences 817, passing sequences 817, failing sequences 0
+INFO(4421342656)2019-05-05 12:59:22,149:multiple_sequence_alignment seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW06000a_5_L001_R1_001.fastq.gz.trim.derep.no_artifacts
+INFO(4421342656)2019-05-05 12:59:24,172:deblurring 817 sequences
+INFO(4421342656)2019-05-05 12:59:24,274:75 unique sequences left following deblurring
+INFO(4421342656)2019-05-05 12:59:24,275:remove_chimeras_denovo_from_seqs seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW06000a_5_L001_R1_001.fastq.gz.trim.derep.no_artifacts.msa.deblurto working dir /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir
+INFO(4421342656)2019-05-05 12:59:24,313:finished processing file
+INFO(4421342656)2019-05-05 12:59:24,315:--------------------------------------------------------
+INFO(4421342656)2019-05-05 12:59:24,315:launch_workflow for file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/qiime2-archive-9smqza7s/cfb1d1ac-93b1-40f7-809a-c01829f1b2c4/data/ORIG1CR1101NW04000b_3_L001_R1_001.fastq.gz
+INFO(4421342656)2019-05-05 12:59:31,625:dereplicate seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW04000b_3_L001_R1_001.fastq.gz.trim
+INFO(4421342656)2019-05-05 12:59:31,670:remove_artifacts_seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW04000b_3_L001_R1_001.fastq.gz.trim.derep
+INFO(4421342656)2019-05-05 12:59:32,311:total sequences 1048, passing sequences 1048, failing sequences 0
+INFO(4421342656)2019-05-05 12:59:32,311:multiple_sequence_alignment seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW04000b_3_L001_R1_001.fastq.gz.trim.derep.no_artifacts
+INFO(4421342656)2019-05-05 12:59:35,080:deblurring 1048 sequences
+INFO(4421342656)2019-05-05 12:59:35,406:192 unique sequences left following deblurring
+INFO(4421342656)2019-05-05 12:59:35,408:remove_chimeras_denovo_from_seqs seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW04000b_3_L001_R1_001.fastq.gz.trim.derep.no_artifacts.msa.deblurto working dir /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir
+INFO(4421342656)2019-05-05 12:59:35,503:finished processing file
+INFO(4421342656)2019-05-05 12:59:35,504:--------------------------------------------------------
+INFO(4421342656)2019-05-05 12:59:35,504:launch_workflow for file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/qiime2-archive-9smqza7s/cfb1d1ac-93b1-40f7-809a-c01829f1b2c4/data/ORIG1CR1101NW10000b_9_L001_R1_001.fastq.gz
+INFO(4421342656)2019-05-05 12:59:39,162:dereplicate seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW10000b_9_L001_R1_001.fastq.gz.trim
+INFO(4421342656)2019-05-05 12:59:39,189:remove_artifacts_seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW10000b_9_L001_R1_001.fastq.gz.trim.derep
+INFO(4421342656)2019-05-05 12:59:39,861:total sequences 437, passing sequences 437, failing sequences 0
+INFO(4421342656)2019-05-05 12:59:39,861:multiple_sequence_alignment seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW10000b_9_L001_R1_001.fastq.gz.trim.derep.no_artifacts
+INFO(4421342656)2019-05-05 12:59:49,545:deblurring 437 sequences
+INFO(4421342656)2019-05-05 12:59:49,643:96 unique sequences left following deblurring
+INFO(4421342656)2019-05-05 12:59:49,645:remove_chimeras_denovo_from_seqs seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW10000b_9_L001_R1_001.fastq.gz.trim.derep.no_artifacts.msa.deblurto working dir /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir
+INFO(4421342656)2019-05-05 12:59:49,700:finished processing file
+INFO(4421342656)2019-05-05 12:59:49,701:--------------------------------------------------------
+INFO(4421342656)2019-05-05 12:59:49,702:launch_workflow for file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/qiime2-archive-9smqza7s/cfb1d1ac-93b1-40f7-809a-c01829f1b2c4/data/ORIG1CR1101NW05000b_4_L001_R1_001.fastq.gz
+INFO(4421342656)2019-05-05 12:59:55,287:dereplicate seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW05000b_4_L001_R1_001.fastq.gz.trim
+INFO(4421342656)2019-05-05 12:59:55,319:remove_artifacts_seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW05000b_4_L001_R1_001.fastq.gz.trim.derep
+INFO(4421342656)2019-05-05 12:59:55,943:total sequences 702, passing sequences 702, failing sequences 0
+INFO(4421342656)2019-05-05 12:59:55,943:multiple_sequence_alignment seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW05000b_4_L001_R1_001.fastq.gz.trim.derep.no_artifacts
+INFO(4421342656)2019-05-05 12:59:57,544:deblurring 702 sequences
+INFO(4421342656)2019-05-05 12:59:57,637:71 unique sequences left following deblurring
+INFO(4421342656)2019-05-05 12:59:57,638:remove_chimeras_denovo_from_seqs seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW05000b_4_L001_R1_001.fastq.gz.trim.derep.no_artifacts.msa.deblurto working dir /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir
+INFO(4421342656)2019-05-05 12:59:57,677:finished processing file
+INFO(4421342656)2019-05-05 12:59:57,678:--------------------------------------------------------
+INFO(4421342656)2019-05-05 12:59:57,679:launch_workflow for file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/qiime2-archive-9smqza7s/cfb1d1ac-93b1-40f7-809a-c01829f1b2c4/data/ORIG1CR1101NW07000a_6_L001_R1_001.fastq.gz
+INFO(4421342656)2019-05-05 13:00:05,348:dereplicate seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW07000a_6_L001_R1_001.fastq.gz.trim
+INFO(4421342656)2019-05-05 13:00:05,389:remove_artifacts_seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW07000a_6_L001_R1_001.fastq.gz.trim.derep
+INFO(4421342656)2019-05-05 13:00:06,045:total sequences 1000, passing sequences 1000, failing sequences 0
+INFO(4421342656)2019-05-05 13:00:06,046:multiple_sequence_alignment seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW07000a_6_L001_R1_001.fastq.gz.trim.derep.no_artifacts
+INFO(4421342656)2019-05-05 13:00:08,628:deblurring 1000 sequences
+INFO(4421342656)2019-05-05 13:00:08,966:238 unique sequences left following deblurring
+INFO(4421342656)2019-05-05 13:00:08,968:remove_chimeras_denovo_from_seqs seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW07000a_6_L001_R1_001.fastq.gz.trim.derep.no_artifacts.msa.deblurto working dir /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir
+INFO(4421342656)2019-05-05 13:00:09,081:finished processing file
+INFO(4421342656)2019-05-05 13:00:09,082:--------------------------------------------------------
+INFO(4421342656)2019-05-05 13:00:09,082:launch_workflow for file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/qiime2-archive-9smqza7s/cfb1d1ac-93b1-40f7-809a-c01829f1b2c4/data/ORIG1CR1101NW02000c_1_L001_R1_001.fastq.gz
+INFO(4421342656)2019-05-05 13:00:15,299:dereplicate seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW02000c_1_L001_R1_001.fastq.gz.trim
+INFO(4421342656)2019-05-05 13:00:15,337:remove_artifacts_seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW02000c_1_L001_R1_001.fastq.gz.trim.derep
+INFO(4421342656)2019-05-05 13:00:15,950:total sequences 890, passing sequences 890, failing sequences 0
+INFO(4421342656)2019-05-05 13:00:15,950:multiple_sequence_alignment seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW02000c_1_L001_R1_001.fastq.gz.trim.derep.no_artifacts
+INFO(4421342656)2019-05-05 13:00:18,071:deblurring 890 sequences
+INFO(4421342656)2019-05-05 13:00:18,412:246 unique sequences left following deblurring
+INFO(4421342656)2019-05-05 13:00:18,415:remove_chimeras_denovo_from_seqs seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir/ORIG1CR1101NW02000c_1_L001_R1_001.fastq.gz.trim.derep.no_artifacts.msa.deblurto working dir /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/deblur_working_dir
+INFO(4421342656)2019-05-05 13:00:18,532:finished processing file
+INFO(4421342656)2019-05-05 13:00:18,533:finished processing per sample fasta files
+INFO(4421342656)2019-05-05 13:00:18,534:create_otu_table for 10 samples, into output table /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/all.biom
+INFO(4421342656)2019-05-05 13:00:18,612:for output biom table loaded 10 samples, 800 unique sequences
+INFO(4421342656)2019-05-05 13:00:18,613:keeping 128 (out of 800 sequences) with >=10 reads
+INFO(4421342656)2019-05-05 13:00:18,713:saved to biom file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/all.biom
+INFO(4421342656)2019-05-05 13:00:18,714:saved sequence fasta file to /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/all.seqs.fa
+INFO(4421342656)2019-05-05 13:00:18,714:getting 16s sequences from the biom table
+INFO(4421342656)2019-05-05 13:00:18,714:remove_artifacts_seqs file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/all.seqs.fa
+INFO(4421342656)2019-05-05 13:00:22,528:total sequences 128, passing sequences 128, failing sequences 0
+WARNING(4421342656)2019-05-05 13:00:22,550:removed 10 samples with reads per sample<1
+INFO(4421342656)2019-05-05 13:00:22,559:wrote artifact only filtered biom table to /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/reference-non-hit.biom
+INFO(4421342656)2019-05-05 13:00:22,559:saved biom table sequences to fasta file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/reference-non-hit.seqs.fa
+INFO(4421342656)2019-05-05 13:00:22,568:wrote 16s filtered biom table to /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/reference-hit.biom
+INFO(4421342656)2019-05-05 13:00:22,569:saved biom table sequences to fasta file /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/reference-hit.seqs.fa
+INFO(4421342656)2019-05-05 13:00:22,569:Keeping temp files
+INFO(4421342656)2019-05-05 13:00:22,569:deblur workflow finished
+INFO(4421342656)2019-05-05 13:00:22,569:output saved to /private/var/folders/gj/w90v1k6160s44ql6_gfstlfm0000gn/T/tmp5alzhe7f/all.biom
+INFO(4421342656)2019-05-05 13:00:22,569:------------------
