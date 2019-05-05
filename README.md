@@ -193,21 +193,32 @@ mv -v primer_trimmed_fastqs/*.txt cutadapt_log_files/
 
 For files without the Illumina naming convention (e.g., ORIG1CR1101NW01000c_R1.fastq.gz) use the code below. You'll need a manifest file, which I normally use R to create. Here is the R code:
 
-`````````````
-path <- "~/Dropbox/CFREF Work/SteveM/2019_bootcamp/canola/raw_data"   # Set the path to where your sequence files are stored
-manifest <- data.frame(list.files(path), stringsAsFactors = F)        # Create a dataframe of the file locations
-sample_id <- strsplit(manifest$list.files.path., "[_]")[[1]][1]       # Extract the sample names
-absolute_filepath <- paste("$PWD/primer_trimmed_fastqs/", 
-                           manifest$list.files.path., sep = "")       # Make the file paths
-direction <- rep(c("forward","reverse"), 10)                          # Make the read directions
-manifest1 <- cbind.data.frame(sample_id, 
-                              absolute_filepath, 
-                              direction)                              # Make a new data frame including the required columns
-names(manifest1) <- c("sample-id", 
-                      "absolute-filepath", 
-                      "direction")                                    # Rename the columns
+```````````````````````
+# Set the path to where your sequence files are stored
+path <- "~/Dropbox/CFREF Work/SteveM/2019_bootcamp/canola/raw_data"   
+
+# Create a dataframe of the file locations
+manifest <- data.frame(list.files(path), stringsAsFactors = F)
+
+# Extract the sample names
+sample_id <- sapply(strsplit(manifest$list.files.path., "_"), "[", 1)
+
+# Make the file paths
+absolute_filepath <- paste("$PWD/primer_trimmed_fastqs/", manifest$list.files.path., sep = "")       
+
+# Make the read directions
+direction <- rep(c("forward","reverse"), 10)           
+
+# Make a new data frame including the required columns
+manifest1 <- cbind.data.frame(sample_id, absolute_filepath, direction)
+
+# Rename the columns
+names(manifest1) <- c("sample-id", "absolute-filepath", "direction")
+
+# Output the file
 write.csv(manifest1, "~/Dropbox/CFREF Work/SteveM/2019_bootcamp/canola/manifest.csv", row.names = FALSE)
-`````````````
+
+```````````````````````
 
 Here's are the first five lines of an example manifest file. The $PWD means your present working directory (where you're running your qiime pipeline from):
 
