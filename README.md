@@ -326,6 +326,12 @@ qiime deblur denoise-16S \
 The two commands used in this section generate QIIME 2 artifacts containing summary statistics. To view those summary statistics, you can visualize them using qiime metadata tabulate and qiime deblur visualize-stats, respectively:
 
 ```
+qiime metadata tabulate \
+  --m-input-file filt_stats.qza \
+  --o-visualization filt_stats.qzv
+```
+
+```
 qiime deblur visualize-stats \
   --i-deblur-stats deblur-stats.qza \
   --o-visualization deblur-stats.qzv
