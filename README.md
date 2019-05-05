@@ -431,7 +431,7 @@ qiime feature-classifier fit-classifier-naive-bayes \
   --o-classifier SILVA_V3_V5_342F_806R_qiime2_2019_1_classifier.qza
 ````
 
-#### Use the classifier you've trained above to classify you representative sequences
+#### Use the classifier you've trained above to classify your representative sequences
 
 `````
 qiime feature-classifier classify-sklearn \
