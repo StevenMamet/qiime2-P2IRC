@@ -435,7 +435,7 @@ qiime feature-classifier fit-classifier-naive-bayes \
 
 `````
 qiime feature-classifier classify-sklearn \
-  --i-classifier SILVA_V3_V5_342F_806R_qiime2_2019_1_classifier.qza \
+  --i-classifier SILVA_V3_V5_342F_806R_ALL_classifier.qza \
   --p-n-jobs 4 \
   --i-reads reads_qza/rep-seqs.qza \
   --o-classification taxonomy.qza
