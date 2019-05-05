@@ -389,7 +389,49 @@ qiime feature-table tabulate-seqs \
 
 In the next sections we’ll begin to explore the taxonomic composition of the samples, and again relate that to sample metadata. The first step in this process is to assign taxonomy to the sequences in our FeatureData[Sequence] QIIME 2 artifact. We’ll do that using a pre-trained Naive Bayes classifier and the q2-feature-classifier plugin. We’ll apply this classifier to our sequences, and we can generate a visualization of the resulting mapping from sequence to taxonomy.
 
-Note: Taxonomic classifiers perform best when they are trained based on your specific sample preparation and sequencing parameters, including the primers that were used for amplification and the length of your sequence reads. Therefore in general you should follow the instructions in Training feature classifiers with q2-feature-classifier to train your own taxonomic classifiers. We provide some common classifiers on our data resources page, including Silva-based 16S classifiers, though in the future we may stop providing these in favor of having users train their own classifiers which will be most relevant to their sequence data.
+Note: Taxonomic classifiers perform best when they are trained based on your specific sample preparation and sequencing parameters, including the primers that were used for amplification and the length of your sequence reads. 
+
+Here we'll train a classifier using our V3-V5 regions of interest.
+
+The latest Silva reference dataset is available [here](https://www.arb-silva.de/fileadmin/silva_databases/qiime/Silva_132_release.zip). Download and extract it to use in the following step.
+
+First, import the reference sequences and taxonomy into qiime2.
+
+````
+qiime tools import \
+  --type 'FeatureData[Sequence]' \
+  --input-path /Volumes/P2IRC13/Data/DNA_sequencing/Databases/Silva_132_release/rep_set/rep_set_16S_only/99/silva_132_99_16S.fna \
+  --output-path 99_otus.qza
+````
+
+`````
+qiime tools import \
+  --type 'FeatureData[Taxonomy]' \
+  --input-format HeaderlessTSVTaxonomyFormat \
+  --input-path /Volumes/P2IRC13/Data/DNA_sequencing/Databases/Silva_132_release/taxonomy/16S_only/99/majority_taxonomy_all_levels.txt \
+  --output-path ref_all_levels_taxonomy.qza
+`````
+
+Extract the reference reads.
+
+`````
+qiime feature-classifier extract-reads \
+  --i-sequences 99_otus.qza \
+  --p-f-primer CTACGGGGGGCAGCAG \
+  --p-r-primer GGACTACCGGGGTATCT \
+  --o-reads ref_seqs.qza
+`````
+
+Now you're ready to train the classifier.
+
+````
+qiime feature-classifier fit-classifier-naive-bayes \
+  --i-reference-reads ref_seqs.qza \
+  --i-reference-taxonomy ref_all_levels_taxonomy.qza \
+  --o-classifier SILVA_V3_V5_342F_806R_qiime2_2019_1_classifier.qza
+````
+
+#### Use the classifier you've trained above to classify you representative sequences
 
 `````
 qiime feature-classifier classify-sklearn \
