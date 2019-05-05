@@ -304,15 +304,11 @@ qiime quality-filter q-score \
 
 Check to make sure there aren't any errors in the above file:
 
-`
-qiime tools validate reads_qza/reads_trimmed_filt.qza
-`
+`qiime tools validate reads_qza/reads_trimmed_filt.qza`
 
 Make a qiime2 visualization object to look at using qiime2 [view](https://view.qiime2.org/). You'll use this to set your `--p-trim-length` in the deblur step that follows.
 
-`
-qiime demux summarize --i-data reads_qza/reads_trimmed_filt.qza --o-visualization reads_trimmed_filt_summary.qzv
-`
+`qiime demux summarize --i-data reads_qza/reads_trimmed_filt.qza --o-visualization reads_trimmed_filt_summary.qzv`
 
 Next, the Deblur workflow is applied using the qiime deblur denoise-16S method. This method requires one parameter that is used in
 quality filtering, `--p-trim-length n` which truncates the sequences at position `n`. In general, the Deblur developers recommend setting this value to a length where the median quality score begins to drop too low.
@@ -337,10 +333,9 @@ qiime deblur visualize-stats \
 
 Rename the files to match commands later in the qiime2 tutorials cited above
 
-``
-mv rep-seqs-deblur.qza rep-seqs.qza
-mv table-deblur.qza table.qza
-``
+`mv rep-seqs-deblur.qza rep-seqs.qza`
+
+`mv table-deblur.qza table.qza`
 
 After the quality filtering step completes, you’ll want to explore the resulting data. You can do this using the following two commands, which will create visual summaries of the data. The feature-table summarize command will give you information on how many sequences are associated with each sample and with each feature, histograms of those distributions, and some related summary statistics.
 
