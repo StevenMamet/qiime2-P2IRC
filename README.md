@@ -170,7 +170,7 @@ We'll use a script created by Dr. Morgan [Langille](https://github.com/LangilleL
     `.
 2. Press `i` to edit and then paste the code you copied.
 3. Press esc key.
-4. Press shift + `:` and enter `wq` to save the script.
+4. Press `shift` + `:` and enter `wq` to save the script.
 5. Let terminal know this is an executable file by typing 
     `
     chmod a+x parse_cutadapt_logs.py
@@ -299,7 +299,7 @@ Check how many reads made it through each step using another Langille [script](h
     `.
 2. Press `i` to edit and then paste the code you copied.
 3. Press esc key.
-4. Press shift and enter `wq` to save the script.
+4. Press `shift` + `:` and enter `wq` to save the script.
 5. Let terminal know this is an executable file by typing 
     `
     chmod a+x qiime2_fastq_lengths.py
