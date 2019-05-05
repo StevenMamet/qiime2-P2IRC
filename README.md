@@ -368,7 +368,7 @@ This step is **optional** (requires metadata file):
 qiime feature-table summarize \
   --i-table table.qza \
   --o-visualization table.qzv \
-  --m-sample-metadata-file metadata.tsv
+  --m-sample-metadata-file metadata.txt
 ````
 
 Use this step to output a visualization to check how many samples made it through (look at on qiime 2 view):
