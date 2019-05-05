@@ -112,6 +112,8 @@ The following pipeline was derived from qiime2 tutorials [moving pictures](https
 
 #### Run cutadapt to remove the primers (342F, 806R)
 
+For this to work, you should have the latest version of cutadapt (version 2.1) installed. I found I couldn't install it in the qiime2 environment and had to install in my base environment. I run the cutadapt step outside of qiime2.
+
 Note: if you mess up and want to stop a process from running, press ctrl and c to kill it.
 
 First make this directory in canola. This is where you'll transfer the manifest.csv file to (more on that shortly).
@@ -124,8 +126,6 @@ The
 `--jobs N 
 `
 refers to how many processors the command will tap into. The max will depend on your machine. My computer only has 4, so let's use that here. The command assumes the data are in a folder in your active directory called "raw_data".
-
-For this to work, you should have the latest version of cutadapt (version 2.1) installed. I found I couldn't install it in the qiime2 environment and had to install in my base environment. I run the cutadapt step outside of qiime2.
 
 `
 conda install cutadapt
