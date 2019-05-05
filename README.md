@@ -291,31 +291,6 @@ qiime tools import --type SampleData[PairedEndSequencesWithQuality] \
 qiime tools validate reads_qza/reads_trimmed.qza
 `
 
-Check how many reads made it through each step using another Langille [script](https://github.com/LangilleLab/microbiome_helper/blob/master/qiime2_fastq_lengths.py). You'll make this script similar to how you made the last one.
-
-1. Use the vi editor to make a script called qiime2_fastq_lengths.py
-    `
-    qiime2_fastq_lengths.py
-    `.
-2. Press `i` to edit and then paste the code you copied.
-3. Press esc key.
-4. Press `shift` + `:` and enter `wq` to save the script.
-5. Let terminal know this is an executable file by typing 
-    `
-    chmod a+x qiime2_fastq_lengths.py
-    `.
-6. Make a directory to put the output of the script in.
-    `
-    mkdir read_counts
-    `
-6. Run it. Note that the `--proc n` refers to the number of processors to commit to this. I'll use 4 again.
-    `
-    ./qiime2_fastq_lengths.py reads_qza/*.qza --proc 4 -o read_counts/read_counts.tsv
-    `
-
-Now you can inspect this file for how many reads made it through each step.
-
-
 ## Step 6: Filter based on quality scores and deblur
 
 Deblur uses sequence error profiles to associate erroneous sequence reads with the true biological sequence from which they are derived, resulting in high quality sequence variant data. This is applied in two steps. First, an initial quality filtering process based on quality scores is applied. This method is an implementation of the quality filtering approach described by Bokulich et al. (2013).
