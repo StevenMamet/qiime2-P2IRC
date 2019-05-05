@@ -1,47 +1,7 @@
 ## QIIME2 for P2IRC canola
 The .py file in this git was written for running on a server. Here I've tweaked it for a local machine (read: mostly made it shorter).
 
-
-## Step 1: Make a directory to put your raw sequences in.
-```
-mkdir canola
-cd canola/
-mkdir raw_data
-```
-Note: To check to see where the directory is:
-`
-pwd
-`
-Or to go back to your home directory:
-`
-cd $HOME
-`
-
-## Step 2: Download some example data [here](https://www.dropbox.com/sh/maxd8uv1x55t5om/AAD8g1nLK6e8vQtksHuWLwE1a?dl=0).
-````````````````````
-ORIG1CR1101NW01000c_R1.fastq.gz
-ORIG1CR1101NW01000c_R2.fastq.gz
-ORIG1CR1101NW02000c_R1.fastq.gz
-ORIG1CR1101NW02000c_R2.fastq.gz
-ORIG1CR1101NW03000b_R1.fastq.gz
-ORIG1CR1101NW03000b_R2.fastq.gz
-ORIG1CR1101NW04000b_R1.fastq.gz
-ORIG1CR1101NW04000b_R2.fastq.gz
-ORIG1CR1101NW05000b_R1.fastq.gz
-ORIG1CR1101NW05000b_R2.fastq.gz
-ORIG1CR1101NW06000a_R1.fastq.gz
-ORIG1CR1101NW06000a_R2.fastq.gz
-ORIG1CR1101NW07000a_R1.fastq.gz
-ORIG1CR1101NW07000a_R2.fastq.gz
-ORIG1CR1101NW08000b_R1.fastq.gz
-ORIG1CR1101NW08000b_R2.fastq.gz
-ORIG1CR1101NW09000b_R1.fastq.gz
-ORIG1CR1101NW09000b_R2.fastq.gz
-ORIG1CR1101NW10000b_R1.fastq.gz
-ORIG1CR1101NW10000b_R2.fastq.gz
-````````````````````
-
-## Step 3: Install and activate miniconda and qiime.
+## Step 1: Install and activate miniconda and qiime.
 
 ##### Linux (server)
 ````
@@ -103,6 +63,45 @@ Note: To remove all files in a directory without deleting the directory
 `
 rm -rf directory/*
 `
+
+## Step 2: Make a directory to put your raw sequences in.
+```
+mkdir canola
+cd canola/
+mkdir raw_data
+```
+Note: To check to see where the directory is:
+`
+pwd
+`
+Or to go back to your home directory:
+`
+cd $HOME
+`
+
+## Step 3: Download some example data [here](https://www.dropbox.com/sh/maxd8uv1x55t5om/AAD8g1nLK6e8vQtksHuWLwE1a?dl=0).
+````````````````````
+ORIG1CR1101NW01000c_R1.fastq.gz
+ORIG1CR1101NW01000c_R2.fastq.gz
+ORIG1CR1101NW02000c_R1.fastq.gz
+ORIG1CR1101NW02000c_R2.fastq.gz
+ORIG1CR1101NW03000b_R1.fastq.gz
+ORIG1CR1101NW03000b_R2.fastq.gz
+ORIG1CR1101NW04000b_R1.fastq.gz
+ORIG1CR1101NW04000b_R2.fastq.gz
+ORIG1CR1101NW05000b_R1.fastq.gz
+ORIG1CR1101NW05000b_R2.fastq.gz
+ORIG1CR1101NW06000a_R1.fastq.gz
+ORIG1CR1101NW06000a_R2.fastq.gz
+ORIG1CR1101NW07000a_R1.fastq.gz
+ORIG1CR1101NW07000a_R2.fastq.gz
+ORIG1CR1101NW08000b_R1.fastq.gz
+ORIG1CR1101NW08000b_R2.fastq.gz
+ORIG1CR1101NW09000b_R1.fastq.gz
+ORIG1CR1101NW09000b_R2.fastq.gz
+ORIG1CR1101NW10000b_R1.fastq.gz
+ORIG1CR1101NW10000b_R2.fastq.gz
+````````````````````
 
 ## Step 4: Remove primers using cutadapt
 
