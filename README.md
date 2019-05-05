@@ -191,32 +191,32 @@ mv -v primer_trimmed_fastqs/*.txt cutadapt_log_files/
 
 ## Step 5: Import the primer-trimmed data as a qiime2 artifact
 
-For files without the Illumina naming convention (e.g., ORIG1CR1101NW01000c_R1.fastq.gz) use the code below. You'll need a manifest file, which I normally use R to partially create. Here is the R code:
+For files without the Illumina naming convention (e.g., ORIG1CR1101NW01000c_R1.fastq.gz) use the code below. You'll need a manifest file, which I normally use R to create. Here is the R code:
 
-1. Tell R the directory you'd like to read sequence file names in from. Here is an example path, but we'll set this to our actual working directory:
+`````````````
+path <- "~/Dropbox/CFREF Work/SteveM/2019_bootcamp/canola/raw_data"   # Set the path to where your sequence files are stored
+manifest <- data.frame(list.files(path), stringsAsFactors = F)        # Create a dataframe of the file locations
+sample_id <- strsplit(manifest$list.files.path., "[_]")[[1]][1]       # Extract the sample names
+absolute_filepath <- paste("$PWD/primer_trimmed_fastqs/", 
+                           manifest$list.files.path., sep = "")       # Make the file paths
+direction <- rep(c("forward","reverse"), 10)                          # Make the read directions
+manifest1 <- cbind.data.frame(sample_id, 
+                              absolute_filepath, 
+                              direction)                              # Make a new data frame including the required columns
+names(manifest1) <- c("sample-id", 
+                      "absolute-filepath", 
+                      "direction")                                    # Rename the columns
+write.csv(manifest1, "~/Dropbox/CFREF Work/SteveM/2019_bootcamp/canola/manifest.csv", row.names = FALSE)
+`````````````
 
-    `path <- "/Volumes/P2IRC13/Data/DNA_sequencing/Taxonomy_tables/qiime2_canola_2016_2017/raw_data_name_standardized"`
-
-2. Create a dataframe of the file names:
-
-    `metadata <- data.frame(list.files(path))`
-
-3. Output the data frame as a file you can now adjust to be a manifest file in Excel. I know Excel is *super unsexy* but it still works...
-
-    `write.csv(metadata, "/Volumes/P2IRC13/Data/DNA_sequencing/Taxonomy_tables/qiime2_canola_2016_2017/manifest_Mar2019.csv")`
-
-4. Extract the relevant information out of the sequence file name. This Excel [command](https://www.extendoffice.com/documents/excel/1623-excel-extract-text-before-space.html) will come in handy (just replace the " " with "_"):
-
-    `=LEFT(B2,(FIND("_",B2,1)-1))`
-
-Here's an example manifest file. The $PWD means your present working directory (where you're running your qiime pipeline from):
+Here's are the first five lines of an example manifest file. The $PWD means your present working directory (where you're running your qiime pipeline from):
 
 `````
 sample-id	absolute-filepath	direction
-B1	$PWD/primer_trimmed_fastqs/B1_S193_L001_R1_001.fastq.gz	forward
-B1	$PWD/primer_trimmed_fastqs/B1_S193_L001_R2_001.fastq.gz	reverse
-B3	$PWD/primer_trimmed_fastqs/B3_S194_L001_R1_001.fastq.gz	forward
-B3	$PWD/primer_trimmed_fastqs/B3_S194_L001_R2_001.fastq.gz	reverse
+ORIG1CR1101NW01000c	$PWD/primer_trimmed_fastqs/ORIG1CR1101NW01000c_R1.fastq.gz	forward
+ORIG1CR1101NW01000c	$PWD/primer_trimmed_fastqs/ORIG1CR1101NW01000c_R2.fastq.gz	reverse
+ORIG1CR1101NW01000c	$PWD/primer_trimmed_fastqs/ORIG1CR1101NW02000c_R1.fastq.gz	forward
+ORIG1CR1101NW01000c	$PWD/primer_trimmed_fastqs/ORIG1CR1101NW02000c_R2.fastq.gz	reverse
 `````
 
 Note: Make sure this file is in the correct directory.
