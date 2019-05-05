@@ -112,7 +112,7 @@ The following pipeline was derived from qiime2 tutorials [moving pictures](https
 
 #### Run cutadapt to remove the primers (342F, 806R)
 
-For this to work, you should have the latest version of cutadapt (version 2.1) installed. I found I couldn't install it in the qiime2 environment and had to install in my base environment. I run the cutadapt step outside of qiime2.
+For this to work, you should have the latest version of cutadapt (version 2.1 or greater) installed. I found I couldn't install it in the qiime2 environment and had to install in my base environment. I run the cutadapt step outside of qiime2.
 
 Note: if you mess up and want to stop a process from running, press ctrl and c to kill it.
 
