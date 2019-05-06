@@ -119,32 +119,35 @@ Parallel is required to run cutadapt as it's coded below. If you don't have para
 `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null`
 `brew install parallel`
 
-First make this directory in canola. This is where you'll transfer the manifest.csv file to (more on that shortly).
+Use 
+`
+cutadapt --version
+`
+to check which version you've got installed. 
 
-`
-mkdir primer_trimmed_fastqs
-`
-
-The 
-`--jobs N 
-`
-refers to how many processors the command will tap into. The max will depend on your machine. My computer only has 4, so let's use that here. The command assumes the data are in a folder in your active directory called "raw_data".
+To install cutadapt, use the following command:
 
 `
 conda install -c bioconda cutadapt
 `
 
-Use 
-`
-cutadapt --version
-`
-to check which version you've got installed. Note: You may have to uninstall the previous version if it's present (1.18). To uninstall, repeat the following step until you get an error message and then try to re-install the latest version:
+Note: You may have to uninstall the previous version if it's present (1.18). To uninstall, repeat the following step until you get an error message and then try to re-install the latest version (as above):
 
 `
 conda uninstall cutadapt
 `
 
+First make this directory in canola. This is where you'll transfer the manifest.csv file to (more on that shortly).
+
+`
+mkdir primer_trimmed_fastqs
+`
 Now you're ready to run cutadapt to remove the primers from the raw sequence data.
+
+The 
+`--jobs N 
+`
+refers to how many processors the command will tap into. The max will depend on your machine. My computer only has 4, so let's use that here. The command assumes the data are in a folder in your active directory called "raw_data".
 
 ```````````
 parallel --link --jobs 4   'cutadapt \
