@@ -371,6 +371,45 @@ ORIG1CR1101NW09000b	ORIG	1	C	R	1101	N	9	0	0	0	b
 ORIG1CR1101NW10000b	ORIG	1	C	R	1101	N	10	0	0	0	b
 ````````````
 
+Here's some R code, similar to making the manifest.csv file above to make a metadata file. 
+
+```````````````````````````````````
+rm(list = ls()) # Clean workspace
+
+# Set the path to where your sequence files are stored
+path <- "~/Dropbox/CFREF Work/SteveM/2019_bootcamp/canola/raw_data"   
+
+# Create a dataframe of the file locations
+metadata <- data.frame(list.files(path), stringsAsFactors = F)
+
+# Extract the sample names
+sample_id <- sapply(strsplit(metadata$list.files.path., "_"), "[", 1)
+
+# The file name contains the sample information
+Type <- substr(sample_id, 1, 4)
+Year <- substr(sample_id, 5, 5)
+Crop <- substr(sample_id, 6, 6)
+RootSoil <- substr(sample_id, 7, 7)
+Plot <- substr(sample_id, 8, 11)
+FieldDuplicate <- substr(sample_id, 12, 12)
+Week <- substr(sample_id, 14, 15)
+DNAExt <- substr(sample_id, 16, 16)
+PCRRun <- substr(sample_id, 17, 17)
+SeqRep <- substr(sample_id, 18, 18)
+Plate <- substr(sample_id, 19, 19)
+
+# Create the metadata data frame
+metadata1 <- cbind.data.frame(sample_id, Type, Year, Crop, RootSoil, Plot, FieldDuplicate, Week, DNAExt, PCRRun, SeqRep, Plate)
+
+# Rows are duplicated because we have information at the read-level (R1, R2). Change this to sample-level.
+metadata1 <- metadata1[!duplicated(metadata1), ]
+
+# Output the file
+write.csv(metadata1, "~/Dropbox/CFREF Work/SteveM/2019_bootcamp/canola/metadata.csv", row.names = FALSE)
+```````````````````````````````````
+
+I added the subcolumn headings in Excel and saved as tab-delimited format.
+
 This step is **optional** (requires metadata file):
 
 ````
