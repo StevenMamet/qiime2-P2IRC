@@ -371,7 +371,7 @@ ORIG1CR1101NW09000b	ORIG	1	C	R	1101	N	9	0	0	0	b
 ORIG1CR1101NW10000b	ORIG	1	C	R	1101	N	10	0	0	0	b
 ````````````
 
-Here's some R code, similar to making the manifest.csv file above to make a metadata file. 
+Here's some R code, similar to making the manifest.csv file above to make a metadata file in the above example. 
 
 ```````````````````````````````````
 rm(list = ls()) # Clean workspace
