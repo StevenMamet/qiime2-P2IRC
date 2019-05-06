@@ -138,7 +138,7 @@ Use
 `
 cutadapt --version
 `
-to check which version you've got installed. Note: You may have to uninstall the previous version if it's present (1.18). Repeat the following step until you get an error message and then try to re-install the latest version:
+to check which version you've got installed. Note: You may have to uninstall the previous version if it's present (1.18). To uninstall, repeat the following step until you get an error message and then try to re-install the latest version:
 
 `
 conda uninstall cutadapt
