@@ -1,7 +1,7 @@
 ## QIIME2 for P2IRC canola
 The .py file in this git was written for running on a server. Here I've tweaked it for a local machine (read: mostly made it shorter).
 
-## Step 1: Install and activate miniconda and qiime.
+## Step 1: Install miniconda and qiime.
 
 ##### Linux (server)
 ````
