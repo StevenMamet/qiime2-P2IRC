@@ -82,7 +82,7 @@ Or to go back to your home directory:
 cd $HOME
 `
 
-## Step 3: Download some example data [here](https://www.dropbox.com/sh/maxd8uv1x55t5om/AAD8g1nLK6e8vQtksHuWLwE1a?dl=0).
+## Step 3: Download some example data [here](https://www.dropbox.com/sh/maxd8uv1x55t5om/AAD8g1nLK6e8vQtksHuWLwE1a?dl=0) or from the home directory above.
 ````````````````````
 ORIG1CR1101NW01000c_R1.fastq.gz
 ORIG1CR1101NW01000c_R2.fastq.gz
