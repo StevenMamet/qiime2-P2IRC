@@ -314,7 +314,11 @@ Check to make sure there aren't any errors in the above file:
 
 Make a qiime2 visualization object to look at using qiime2 [view](https://view.qiime2.org/). You'll use this to set your `--p-trim-length` in the deblur step that follows.
 
-`qiime demux summarize --i-data reads_qza/reads_trimmed_filt.qza --o-visualization reads_trimmed_filt_summary.qzv`
+```
+qiime demux summarize \
+  --i-data reads_qza/reads_trimmed_filt.qza \
+  --o-visualization reads_trimmed_filt_summary.qzv
+```
 
 Next, the Deblur workflow is applied using the qiime deblur denoise-16S method. This method requires one parameter that is used in
 quality filtering, `--p-trim-length n` which truncates the sequences at position `n`. In general, the Deblur developers recommend setting this value to a length where the median quality score begins to drop too low.
