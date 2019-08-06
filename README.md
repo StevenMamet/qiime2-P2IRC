@@ -28,36 +28,36 @@ conda update conda
 conda install wget
 `
 
-#### Install qiime2 (2019.1 version used here)
+#### Install qiime2 (2019.7 version used here)
 
 ##### Linux
 `
-wget https://data.qiime2.org/distro/core/qiime2-2019.1-py36-linux-conda.yml
+wget https://data.qiime2.org/distro/core/qiime2-2019.7-py36-linux-conda.yml
 `
 
 `
-conda env create -n qiime2-2019.1 --file qiime2-2019.1-py36-linux-conda.yml
+conda env create -n qiime2-2019.7 --file qiime2-2019.7-py36-linux-conda.yml
 `
 
 Optional cleanup: 
 `
-rm qiime2-2019.1-py36-linux-conda.yml
+rm qiime2-2019.7-py36-linux-conda.yml
 `
 
 ##### MacOSX
 `
-wget https://data.qiime2.org/distro/core/qiime2-2019.1-py36-osx-conda.yml
+wget https://data.qiime2.org/distro/core/qiime2-2019.7-py36-osx-conda.yml
 `
 
 `
-conda env create -n qiime2-2019.1 --file qiime2-2019.1-py36-osx-conda.yml
+conda env create -n qiime2-2019.7 --file qiime2-2019.7-py36-osx-conda.yml
 `
 
 If you receive errors during the installation process, such as gfortran errors, please ensure you are following the installation instructions that are compatible with your platform.
 
 Other errors are often resolved by running:
 `
-conda env remove -n qiime2-2019.1
+conda env remove -n qiime2-2019.7
 `
 to remove the failed environments, then running:
 `
@@ -111,7 +111,7 @@ ORIG1CR1101NW10000b_R2.fastq.gz
 
 ## Step 4: Remove primers using cutadapt
 
-The following pipeline was derived from qiime2 tutorials [moving pictures](https://docs.qiime2.org/2019.1/tutorials/moving-pictures/) and [Atacama soils](https://docs.qiime2.org/2019.1/tutorials/atacama-soils/). The cutadapt step was taken from the MicrobiomeHelper [tutorial](https://github.com/LangilleLab/microbiome_helper/wiki/Amplicon-SOP-v2-(qiime2-2018.8)).
+The following pipeline was derived from qiime2 tutorials [moving pictures](https://docs.qiime2.org/2019.7/tutorials/moving-pictures/) and [Atacama soils](https://docs.qiime2.org/2019.7/tutorials/atacama-soils/). The cutadapt step was taken from the MicrobiomeHelper [tutorial](https://github.com/LangilleLab/microbiome_helper/wiki/Amplicon-SOP-v2-(qiime2-2018.8)).
 
 #### Run cutadapt to remove the primers (342F, 806R)
 
@@ -242,22 +242,22 @@ Note: Make sure this file is in the correct directory.
 
 ##### Linux
 `
-conda activate qiime2-2019.1
+conda activate qiime2-2019.7
 `
 
 Note: To deactivate qiime2 use
 `
-conda deactivate qiime2-2019.1
+conda deactivate qiime2-2019.7
 `
 
 #### MacOSX
 `
-source activate qiime2-2019.1
+source activate qiime2-2019.7
 `
 
 Note: To deactivate qiime2 use
 `
-source deactivate qiime2-2019.1
+source deactivate qiime2-2019.7
 `
 
 Test if qiime successfully activated
