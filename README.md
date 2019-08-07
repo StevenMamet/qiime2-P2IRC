@@ -75,6 +75,15 @@ rm -rf directory/*
 
 `export TMPDIR="$PWD/qiime2-tmp/"`
 
+##### It may also be helpful to run resource-intensive processes in screen. This way, if there is a break in server connectivity, your process won't be aborted. Here I've named it "canola":
+
+`screen -d -R canola`
+
+To exit, `ctrl` + `a` followed by `d` (think "detach")
+If it's not responding, you can exit (`ctrl` + `a` followed by `d`) and type:
+
+`screen -X -S canola quit`
+
 ## Step 2: Make a directory to put your raw sequences in.
 ```
 mkdir canola
