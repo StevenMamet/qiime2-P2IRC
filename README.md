@@ -69,6 +69,11 @@ Note: To remove all files in a directory without deleting the directory
 `
 rm -rf directory/*
 `
+##### It may be worth making a temp directory within your workspace to avoid space issues:
+
+`mkdir qiime2-tmp/`
+
+`export TMPDIR="$PWD/qiime2-tmp/"`
 
 ## Step 2: Make a directory to put your raw sequences in.
 ```
