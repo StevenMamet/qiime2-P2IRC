@@ -315,6 +315,25 @@ qiime tools validate reads_qza/reads_trimmed.qza
 
 Deblur uses sequence error profiles to associate erroneous sequence reads with the true biological sequence from which they are derived, resulting in high quality sequence variant data. This is applied in two steps. First, an initial quality filtering process based on quality scores is applied. This method is an implementation of the quality filtering approach described by Bokulich et al. (2013).
 
+### Option 1 – using forward and reverse reads:
+
+First join the reads using the q2-vsearch plugin:
+
+```
+qiime vsearch join-pairs \
+  --i-demultiplexed-seqs reads_qza/reads_trimmed.qza \
+  --o-joined-sequences reads_qza/reads_trimmed_joined.qza
+```
+
+````
+qiime quality-filter q-score-joined \
+ --i-demux reads_qza/reads_trimmed_joined.qza \
+ --o-filtered-sequences reads_qza/reads_trimmed_joined_filt.qza \
+ --o-filter-stats filt_stats_joined.qza
+````
+
+### Option 2 – only using forward reads:
+
 ````
 qiime quality-filter q-score \
  --i-demux reads_qza/reads_trimmed.qza \
@@ -335,7 +354,7 @@ qiime demux summarize \
 ```
 
 Next, the Deblur workflow is applied using the qiime deblur denoise-16S method. This method requires one parameter that is used in
-quality filtering, `--p-trim-length n` which truncates the sequences at position `n`. In general, the Deblur developers recommend setting this value to a length where the median quality score begins to drop too low.
+quality filtering, `--p-trim-length n` which truncates the sequences at position `n`. In general, the Deblur developers recommend setting this value to a length where the median quality score begins to drop too low. The `p-trim-length` will be longer for joined reads compared to forward reads (e.g., for forward reads I used an `n` of 200, whereas for joined reads I used 400 based on the visualization step above).
 
 ```````
 qiime deblur denoise-16S \
