@@ -322,6 +322,7 @@ First join the reads using the q2-vsearch plugin:
 ```
 qiime vsearch join-pairs \
   --i-demultiplexed-seqs reads_qza/reads_trimmed.qza \
+  --p-allowmergestagger \
   --o-joined-sequences reads_qza/reads_trimmed_joined.qza
 ```
 
